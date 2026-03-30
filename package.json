@@ -1,6 +1,6 @@
 {
   "name": "neuralseek",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "NeuralSeek___The_business_LLM_accelerator",
   "license": "End User License Agreement",
   "main": "src/index.js",
