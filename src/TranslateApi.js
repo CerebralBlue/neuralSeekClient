@@ -23,14 +23,14 @@ import TranslateGlossaryBody1 from '../model/TranslateGlossaryBody1';
 
 /**
 * Translate service.
-* @module api/TranslateApi
+* @module TranslateApi
 * @version 1.0.1
 */
 export default class TranslateApi {
 
     /**
     * Constructs a new TranslateApi. 
-    * @alias module:api/TranslateApi
+    * @alias module:TranslateApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instanc
@@ -42,7 +42,7 @@ export default class TranslateApi {
 
     /**
      * Callback function to receive the result of the deleteTranslateGlossary operation.
-     * @callback moduleapi/TranslateApi~deleteTranslateGlossaryCallback
+     * @callback moduleTranslateApi~deleteTranslateGlossaryCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -51,7 +51,7 @@ export default class TranslateApi {
     /**
      * Delete the custom translations
      * Delete the custom translations
-     * @param {module:api/TranslateApi~deleteTranslateGlossaryCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:TranslateApi~deleteTranslateGlossaryCallback} callback The callback function, accepting three arguments: error, data, response
      */
     deleteTranslateGlossary(callback) {
       
@@ -83,7 +83,7 @@ export default class TranslateApi {
     }
     /**
      * Callback function to receive the result of the identifyLanguage operation.
-     * @callback moduleapi/TranslateApi~identifyLanguageCallback
+     * @callback moduleTranslateApi~identifyLanguageCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse2008>{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -93,7 +93,7 @@ export default class TranslateApi {
      * Identify the source language
      * Identify the source language
      * @param {String} body The request object.
-     * @param {module:api/TranslateApi~identifyLanguageCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:TranslateApi~identifyLanguageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     identifyLanguage(body, callback) {
@@ -130,7 +130,7 @@ export default class TranslateApi {
     }
     /**
      * Callback function to receive the result of the identifyLanguageJSON operation.
-     * @callback moduleapi/TranslateApi~identifyLanguageJSONCallback
+     * @callback moduleTranslateApi~identifyLanguageJSONCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2009{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -140,7 +140,7 @@ export default class TranslateApi {
      * Identify the source language (JSON)
      * Identify the source language (JSON)
      * @param {module:model/IdentifysingleBody} body The request object.
-     * @param {module:api/TranslateApi~identifyLanguageJSONCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:TranslateApi~identifyLanguageJSONCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     identifyLanguageJSON(body, callback) {
@@ -177,7 +177,7 @@ export default class TranslateApi {
     }
     /**
      * Callback function to receive the result of the translate operation.
-     * @callback moduleapi/TranslateApi~translateCallback
+     * @callback moduleTranslateApi~translateCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2007{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -187,7 +187,7 @@ export default class TranslateApi {
      * Translate text into a desired language
      * Translate text into a desired language
      * @param {module:model/TranslateBody} body The request object.
-     * @param {module:api/TranslateApi~translateCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:TranslateApi~translateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     translate(body, callback) {
@@ -224,7 +224,7 @@ export default class TranslateApi {
     }
     /**
      * Callback function to receive the result of the translateGlossary operation.
-     * @callback moduleapi/TranslateApi~translateGlossaryCallback
+     * @callback moduleTranslateApi~translateGlossaryCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -235,7 +235,7 @@ export default class TranslateApi {
      * Add custom translations
      * @param {Blob} file 
      * @param {module:model/TranslateGlossaryBody1} body This endpoint will accept either a file upload (TMX or JSON), or a direct JSON payload following IBM&#x27;s JSON file format https://cloud.ibm.com/docs/language-translator?topic&#x3D;language-translator-customizing#json.  Only one file may be saved. Subsequent files will overwrite.
-     * @param {module:api/TranslateApi~translateGlossaryCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:TranslateApi~translateGlossaryCallback} callback The callback function, accepting three arguments: error, data, response
      */
     translateGlossary(file, body, callback) {
       

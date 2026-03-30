@@ -14,18 +14,18 @@
  *
  */
 import ApiClient from "../ApiClient";
-import TestBody1 from '../model/TestBody1';
+import InlineResponse20013 from '../model/InlineResponse20013';
 
 /**
-* TestQuestions service.
-* @module api/TestQuestionsApi
+* Keys service.
+* @module KeysApi
 * @version 1.0.1
 */
-export default class TestQuestionsApi {
+export default class KeysApi {
 
     /**
-    * Constructs a new TestQuestionsApi. 
-    * @alias module:api/TestQuestionsApi
+    * Constructs a new KeysApi. 
+    * @alias module:KeysApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instanc
@@ -36,19 +36,19 @@ export default class TestQuestionsApi {
     }
 
     /**
-     * Callback function to receive the result of the getTestResults operation.
-     * @callback moduleapi/TestQuestionsApi~getTestResultsCallback
+     * Callback function to receive the result of the keycheck operation.
+     * @callback moduleKeysApi~keycheckCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Get Test Results
-     * Retrieve an results from the test endpoint
-     * @param {module:api/TestQuestionsApi~getTestResultsCallback} callback The callback function, accepting three arguments: error, data, response
+     * Validate an api key
+     * Validate an api key
+     * @param {module:KeysApi~keycheckCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    getTestResults(callback) {
+    keycheck(callback) {
       
       let postBody = null;
 
@@ -71,30 +71,28 @@ export default class TestQuestionsApi {
       let returnType = null;
 
       return this.apiClient.callApi(
-        '/getTestResults', 'GET',
+        '/keycheck', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
     /**
-     * Callback function to receive the result of the test operation.
-     * @callback moduleapi/TestQuestionsApi~testCallback
+     * Callback function to receive the result of the otp operation.
+     * @callback moduleKeysApi~otpCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/InlineResponse20013{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Test questions via batch upload
-     * Test questions via batch upload
-     * @param {Object} opts Optional parameters
-     * @param {Blob} opts.file 
-     * @param {module:model/TestBody1} opts.body The questions csv.  Must adhere to the template https://api.neuralseek.com/q.csv After upload you will receive a 202 response and the server will begin processing.  Check for your completed results on the getTestResults endpoint.
-     * @param {module:api/TestQuestionsApi~testCallback} callback The callback function, accepting three arguments: error, data, response
+     * Create a One Time Password
+     * Create a One Time Password for use instead of an api key in unsecure environments, such as the browser. The password will expire after one use, and is valid for 30 minutes. This password can only be used for seek, mAIstro, extract, categorize, score, and logs operations.
+     * @param {module:KeysApi~otpCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    test(opts, callback) {
-      opts = opts || {};
-      let postBody = opts['body'];
+    otp(callback) {
+      
+      let postBody = null;
 
       let pathParams = {
         
@@ -106,16 +104,16 @@ export default class TestQuestionsApi {
         
       };
       let formParams = {
-        'file': opts['file']
+        
       };
 
       let authNames = ['apiKey'];
-      let contentTypes = ['multipart/form-data', 'application/json'];
-      let accepts = [];
-      let returnType = null;
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse20013;
 
       return this.apiClient.callApi(
-        '/test', 'POST',
+        '/otp', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

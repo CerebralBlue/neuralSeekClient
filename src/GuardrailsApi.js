@@ -14,21 +14,20 @@
  *
  */
 import ApiClient from "../ApiClient";
-import InlineResponse200 from '../model/InlineResponse200';
-import Seek from '../model/Seek';
-import SeekResponse from '../model/SeekResponse';
-import SeekStreamBody from '../model/SeekStreamBody';
+import InlineResponse20010 from '../model/InlineResponse20010';
+import PiiBody from '../model/PiiBody';
+import ScoreBody from '../model/ScoreBody';
 
 /**
-* Seek service.
-* @module api/SeekApi
+* Guardrails service.
+* @module GuardrailsApi
 * @version 1.0.1
 */
-export default class SeekApi {
+export default class GuardrailsApi {
 
     /**
-    * Constructs a new SeekApi. 
-    * @alias module:api/SeekApi
+    * Constructs a new GuardrailsApi. 
+    * @alias module:GuardrailsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instanc
@@ -39,26 +38,26 @@ export default class SeekApi {
     }
 
     /**
-     * Callback function to receive the result of the seek operation.
-     * @callback moduleapi/SeekApi~seekCallback
+     * Callback function to receive the result of the pii operation.
+     * @callback moduleGuardrailsApi~piiCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/SeekResponse{ data The data returned by the service call.
+     * @param {Array.<module:model/InlineResponse20010>{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Seek an answer from NeuralSeek
-     * This endpoint takes an input object with a user question, context and options and returns a response object
-     * @param {module:model/Seek} body The request object.  Must include the question and a context.
-     * @param {module:api/SeekApi~seekCallback} callback The callback function, accepting three arguments: error, data, response
+     * Find PII in a user utterance
+     * Find PII in a user utterance
+     * @param {module:model/PiiBody} body The request object.
+     * @param {module:GuardrailsApi~piiCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    seek(body, callback) {
+    pii(body, callback) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling seek");
+        throw new Error("Missing the required parameter 'body' when calling pii");
       }
 
       let pathParams = {
@@ -77,35 +76,34 @@ export default class SeekApi {
       let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = SeekResponse;
+      let returnType = [InlineResponse20010];
 
       return this.apiClient.callApi(
-        '/seek', 'POST',
+        '/pii', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
     /**
-     * Callback function to receive the result of the seekStream operation.
-     * @callback moduleapi/SeekApi~seekStreamCallback
+     * Callback function to receive the result of the score operation.
+     * @callback moduleGuardrailsApi~scoreCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Stream a Seek an answer from NeuralSeek
-     * This endpoint takes an input object with a user question, context and options and returns a response object
-     * @param {module:model/SeekStreamBody} body The request object.  Must include the question and a context.
-     * @param {module:api/SeekApi~seekStreamCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * Run the Semantic Scoring model on text against an array of passages
+     * Run the Semantic Scoring model on text against an array of passages
+     * @param {module:model/ScoreBody} body The request object.  Must include the question and a context.
+     * @param {module:GuardrailsApi~scoreCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    seekStream(body, callback) {
+    score(body, callback) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling seekStream");
+        throw new Error("Missing the required parameter 'body' when calling score");
       }
 
       let pathParams = {
@@ -123,11 +121,11 @@ export default class SeekApi {
 
       let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
-      let accepts = ['text/event-stream'];
-      let returnType = InlineResponse200;
+      let accepts = [];
+      let returnType = null;
 
       return this.apiClient.callApi(
-        '/seek_stream', 'POST',
+        '/score', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

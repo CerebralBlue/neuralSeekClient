@@ -16,7 +16,7 @@ Responds 200
 
 ### Example
 ```javascript
-import {NeuralSeek} from 'neural_seek';
+import {NeuralSeek} from 'neuralSeek';
 
 let apiInstance = new NeuralSeek.ServiceTestApi();
 apiInstance.servicetest((error, data, response) => {

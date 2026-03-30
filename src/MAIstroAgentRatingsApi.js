@@ -14,20 +14,20 @@
  *
  */
 import ApiClient from "../ApiClient";
-import AnswerRatingsBody from '../model/AnswerRatingsBody';
 import InlineResponse2001 from '../model/InlineResponse2001';
-import RateBody from '../model/RateBody';
+import MaistroRateBody from '../model/MaistroRateBody';
+import MaistroRatingsBody from '../model/MaistroRatingsBody';
 
 /**
-* SeekAnswerRatings service.
-* @module api/SeekAnswerRatingsApi
+* MAIstroAgentRatings service.
+* @module MAIstroAgentRatingsApi
 * @version 1.0.1
 */
-export default class SeekAnswerRatingsApi {
+export default class MAIstroAgentRatingsApi {
 
     /**
-    * Constructs a new SeekAnswerRatingsApi. 
-    * @alias module:api/SeekAnswerRatingsApi
+    * Constructs a new MAIstroAgentRatingsApi. 
+    * @alias module:MAIstroAgentRatingsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instanc
@@ -38,72 +38,25 @@ export default class SeekAnswerRatingsApi {
     }
 
     /**
-     * Callback function to receive the result of the answerRatings operation.
-     * @callback moduleapi/SeekAnswerRatingsApi~answerRatingsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the average user ratings for an answer
-     * Get the average user ratings for an answer
-     * @param {module:model/AnswerRatingsBody} body The request object.
-     * @param {module:api/SeekAnswerRatingsApi~answerRatingsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
-     */
-    answerRatings(body, callback) {
-      
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling answerRatings");
-      }
-
-      let pathParams = {
-        
-      };
-      let queryParams = {
-        
-      };
-      let headerParams = {
-        
-      };
-      let formParams = {
-        
-      };
-
-      let authNames = ['apiKey'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = InlineResponse2001;
-
-      return this.apiClient.callApi(
-        '/answerRatings', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-    /**
-     * Callback function to receive the result of the rate operation.
-     * @callback moduleapi/SeekAnswerRatingsApi~rateCallback
+     * Callback function to receive the result of the maistroRate operation.
+     * @callback moduleMAIstroAgentRatingsApi~maistroRateCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Rate an answer
-     * Allow users to give feedback in on answers generated
-     * @param {module:model/RateBody} body The request object.
-     * @param {module:api/SeekAnswerRatingsApi~rateCallback} callback The callback function, accepting three arguments: error, data, response
+     * Rate an Agent
+     * Allow users to give feedback on an Agent run
+     * @param {module:model/MaistroRateBody} body The request object.
+     * @param {module:MAIstroAgentRatingsApi~maistroRateCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    rate(body, callback) {
+    maistroRate(body, callback) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling rate");
+        throw new Error("Missing the required parameter 'body' when calling maistroRate");
       }
 
       let pathParams = {
@@ -125,7 +78,54 @@ export default class SeekAnswerRatingsApi {
       let returnType = null;
 
       return this.apiClient.callApi(
-        '/rate', 'POST',
+        '/maistroRate', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the maistroRatings operation.
+     * @callback moduleMAIstroAgentRatingsApi~maistroRatingsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse2001{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the average user ratings for an agent
+     * Get the average user ratings for an agent
+     * @param {module:model/MaistroRatingsBody} body The request object.
+     * @param {module:MAIstroAgentRatingsApi~maistroRatingsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    maistroRatings(body, callback) {
+      
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling maistroRatings");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        
+      };
+      let headerParams = {
+        
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse2001;
+
+      return this.apiClient.callApi(
+        '/maistroRatings', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

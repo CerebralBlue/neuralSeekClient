@@ -14,20 +14,21 @@
  *
  */
 import ApiClient from "../ApiClient";
-import InlineResponse2001 from '../model/InlineResponse2001';
-import MaistroRateBody from '../model/MaistroRateBody';
-import MaistroRatingsBody from '../model/MaistroRatingsBody';
+import InlineResponse20011 from '../model/InlineResponse20011';
+import InlineResponse20012 from '../model/InlineResponse20012';
+import LogExternalAgentBody from '../model/LogExternalAgentBody';
+import LogsBody from '../model/LogsBody';
 
 /**
-* MAIstroAgentRatings service.
-* @module api/MAIstroAgentRatingsApi
+* Logs service.
+* @module LogsApi
 * @version 1.0.1
 */
-export default class MAIstroAgentRatingsApi {
+export default class LogsApi {
 
     /**
-    * Constructs a new MAIstroAgentRatingsApi. 
-    * @alias module:api/MAIstroAgentRatingsApi
+    * Constructs a new LogsApi. 
+    * @alias module:LogsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instanc
@@ -38,72 +39,26 @@ export default class MAIstroAgentRatingsApi {
     }
 
     /**
-     * Callback function to receive the result of the maistroRate operation.
-     * @callback moduleapi/MAIstroAgentRatingsApi~maistroRateCallback
+     * Callback function to receive the result of the logExternalAgent operation.
+     * @callback moduleLogsApi~logExternalAgentCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/InlineResponse20012{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Rate an Agent
-     * Allow users to give feedback on an Agent run
-     * @param {module:model/MaistroRateBody} body The request object.
-     * @param {module:api/MAIstroAgentRatingsApi~maistroRateCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    maistroRate(body, callback) {
-      
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling maistroRate");
-      }
-
-      let pathParams = {
-        
-      };
-      let queryParams = {
-        
-      };
-      let headerParams = {
-        
-      };
-      let formParams = {
-        
-      };
-
-      let authNames = ['apiKey'];
-      let contentTypes = ['application/json'];
-      let accepts = [];
-      let returnType = null;
-
-      return this.apiClient.callApi(
-        '/maistroRate', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-    /**
-     * Callback function to receive the result of the maistroRatings operation.
-     * @callback moduleapi/MAIstroAgentRatingsApi~maistroRatingsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the average user ratings for an agent
-     * Get the average user ratings for an agent
-     * @param {module:model/MaistroRatingsBody} body The request object.
-     * @param {module:api/MAIstroAgentRatingsApi~maistroRatingsCallback} callback The callback function, accepting three arguments: error, data, response
+     * Log external agent execution details
+     * Records various timing and performance metrics for external agent execution
+     * @param {module:model/LogExternalAgentBody} body 
+     * @param {module:LogsApi~logExternalAgentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    maistroRatings(body, callback) {
+    logExternalAgent(body, callback) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling maistroRatings");
+        throw new Error("Missing the required parameter 'body' when calling logExternalAgent");
       }
 
       let pathParams = {
@@ -122,10 +77,54 @@ export default class MAIstroAgentRatingsApi {
       let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2001;
+      let returnType = InlineResponse20012;
 
       return this.apiClient.callApi(
-        '/maistroRatings', 'POST',
+        '/logExternalAgent', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the logs operation.
+     * @callback moduleLogsApi~logsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/InlineResponse20011>{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Instance Logs
+     * Retrieve logs for your instance
+     * @param {Object} opts Optional parameters
+     * @param {module:model/LogsBody} opts.body The request object.
+     * @param {module:LogsApi~logsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    logs(opts, callback) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        
+      };
+      let headerParams = {
+        
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = [InlineResponse20011];
+
+      return this.apiClient.callApi(
+        '/logs', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

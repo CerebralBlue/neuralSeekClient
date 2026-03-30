@@ -17,7 +17,7 @@ Get the average user ratings for an answer
 
 ### Example
 ```javascript
-import {NeuralSeek} from 'neural_seek';
+import {NeuralSeek} from 'neuralSeek';
 let defaultClient = NeuralSeek.ApiClient.instance;
 
 // Configure API key authorization: apiKey
@@ -67,7 +67,7 @@ Allow users to give feedback in on answers generated
 
 ### Example
 ```javascript
-import {NeuralSeek} from 'neural_seek';
+import {NeuralSeek} from 'neuralSeek';
 let defaultClient = NeuralSeek.ApiClient.instance;
 
 // Configure API key authorization: apiKey

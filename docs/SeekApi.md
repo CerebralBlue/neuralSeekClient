@@ -17,7 +17,7 @@ This endpoint takes an input object with a user question, context and options an
 
 ### Example
 ```javascript
-import {NeuralSeek} from 'neural_seek';
+import {NeuralSeek} from 'neuralSeek';
 let defaultClient = NeuralSeek.ApiClient.instance;
 
 // Configure API key authorization: apiKey
@@ -67,7 +67,7 @@ This endpoint takes an input object with a user question, context and options an
 
 ### Example
 ```javascript
-import {NeuralSeek} from 'neural_seek';
+import {NeuralSeek} from 'neuralSeek';
 let defaultClient = NeuralSeek.ApiClient.instance;
 
 // Configure API key authorization: apiKey

@@ -24,14 +24,14 @@ import MaistroStreamBody from '../model/MaistroStreamBody';
 
 /**
 * MAIstro service.
-* @module api/MAIstroApi
+* @module MAIstroApi
 * @version 1.0.1
 */
 export default class MAIstroApi {
 
     /**
     * Constructs a new MAIstroApi. 
-    * @alias module:api/MAIstroApi
+    * @alias module:MAIstroApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instanc
@@ -43,7 +43,7 @@ export default class MAIstroApi {
 
     /**
      * Callback function to receive the result of the chat operation.
-     * @callback moduleapi/MAIstroApi~chatCallback
+     * @callback moduleMAIstroApi~chatCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2004{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -55,7 +55,7 @@ export default class MAIstroApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/ChatCompletionsBody} opts.body 
      * @param {String} opts.runid Optional header to specify the run ID
-     * @param {module:api/MAIstroApi~chatCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:MAIstroApi~chatCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     chat(opts, callback) {
@@ -88,7 +88,7 @@ export default class MAIstroApi {
     }
     /**
      * Callback function to receive the result of the maistro operation.
-     * @callback moduleapi/MAIstroApi~maistroCallback
+     * @callback moduleMAIstroApi~maistroCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2002{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -102,7 +102,7 @@ export default class MAIstroApi {
      * @param {String} opts.overrideschema Find variables based on post body.  Return all variables as the base presponse body, overriding the normal NS schema. All POST options will be ignored. Set this to a string value of &#x27;true&#x27; to activate
      * @param {String} opts.overrideagent If using overrideSchema you must pass your agent name here. All other POST options will be ignored.
      * @param {String} opts.debug Include NS debug information in a field named &#x27;neuralseek&#x27;. Set this to a string value of &#x27;true&#x27; to activate
-     * @param {module:api/MAIstroApi~maistroCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:MAIstroApi~maistroCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     maistro(body, opts, callback) {
@@ -139,7 +139,7 @@ export default class MAIstroApi {
     }
     /**
      * Callback function to receive the result of the maistroAgentGet operation.
-     * @callback moduleapi/MAIstroApi~maistroAgentGetCallback
+     * @callback moduleMAIstroApi~maistroAgentGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2002{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -151,7 +151,7 @@ export default class MAIstroApi {
      * @param {String} agent The saved mAIstro agent to run
      * @param {Object} opts Optional parameters
      * @param {String} opts.params Pass your mAIstro params as query parameters in simple name&#x3D;value format
-     * @param {module:api/MAIstroApi~maistroAgentGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:MAIstroApi~maistroAgentGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     maistroAgentGet(agent, opts, callback) {
@@ -188,7 +188,7 @@ export default class MAIstroApi {
     }
     /**
      * Callback function to receive the result of the maistroBatch operation.
-     * @callback moduleapi/MAIstroApi~maistroBatchCallback
+     * @callback moduleMAIstroApi~maistroBatchCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -198,7 +198,7 @@ export default class MAIstroApi {
      * Call mAIstro NTL or an agent via batch
      * Freeform prompting using NeuralSeek Template Language or a saved agent run in batch mode
      * @param {module:model/MaistroBatchBody} body The request object.
-     * @param {module:api/MAIstroApi~maistroBatchCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:MAIstroApi~maistroBatchCallback} callback The callback function, accepting three arguments: error, data, response
      */
     maistroBatch(body, callback) {
       
@@ -234,7 +234,7 @@ export default class MAIstroApi {
     }
     /**
      * Callback function to receive the result of the maistroBatchDelete operation.
-     * @callback moduleapi/MAIstroApi~maistroBatchDeleteCallback
+     * @callback moduleMAIstroApi~maistroBatchDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -243,7 +243,7 @@ export default class MAIstroApi {
     /**
      * Cancel current mAIstro batch run
      * Cancel current mAIstro batch run
-     * @param {module:api/MAIstroApi~maistroBatchDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:MAIstroApi~maistroBatchDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
     maistroBatchDelete(callback) {
       
@@ -275,7 +275,7 @@ export default class MAIstroApi {
     }
     /**
      * Callback function to receive the result of the maistroBatchGet operation.
-     * @callback moduleapi/MAIstroApi~maistroBatchGetCallback
+     * @callback moduleMAIstroApi~maistroBatchGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2002{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -284,7 +284,7 @@ export default class MAIstroApi {
     /**
      * Get mAIstro batch results
      * Retrieve results from a mAIstro batch run
-     * @param {module:api/MAIstroApi~maistroBatchGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:MAIstroApi~maistroBatchGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     maistroBatchGet(callback) {
@@ -317,7 +317,7 @@ export default class MAIstroApi {
     }
     /**
      * Callback function to receive the result of the maistroStream operation.
-     * @callback moduleapi/MAIstroApi~maistroStreamCallback
+     * @callback moduleMAIstroApi~maistroStreamCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2003{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -327,7 +327,7 @@ export default class MAIstroApi {
      * Stream mAIstro NTL or an agent
      * Freeform prompting using NeuralSeek Template Language or a saved agent
      * @param {module:model/MaistroStreamBody} body The request object.
-     * @param {module:api/MAIstroApi~maistroStreamCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:MAIstroApi~maistroStreamCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     maistroStream(body, callback) {

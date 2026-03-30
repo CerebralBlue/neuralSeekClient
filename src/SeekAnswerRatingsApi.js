@@ -14,21 +14,20 @@
  *
  */
 import ApiClient from "../ApiClient";
-import InlineResponse20011 from '../model/InlineResponse20011';
-import InlineResponse20012 from '../model/InlineResponse20012';
-import LogExternalAgentBody from '../model/LogExternalAgentBody';
-import LogsBody from '../model/LogsBody';
+import AnswerRatingsBody from '../model/AnswerRatingsBody';
+import InlineResponse2001 from '../model/InlineResponse2001';
+import RateBody from '../model/RateBody';
 
 /**
-* Logs service.
-* @module api/LogsApi
+* SeekAnswerRatings service.
+* @module SeekAnswerRatingsApi
 * @version 1.0.1
 */
-export default class LogsApi {
+export default class SeekAnswerRatingsApi {
 
     /**
-    * Constructs a new LogsApi. 
-    * @alias module:api/LogsApi
+    * Constructs a new SeekAnswerRatingsApi. 
+    * @alias module:SeekAnswerRatingsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instanc
@@ -39,26 +38,26 @@ export default class LogsApi {
     }
 
     /**
-     * Callback function to receive the result of the logExternalAgent operation.
-     * @callback moduleapi/LogsApi~logExternalAgentCallback
+     * Callback function to receive the result of the answerRatings operation.
+     * @callback moduleSeekAnswerRatingsApi~answerRatingsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20012{ data The data returned by the service call.
+     * @param {module:model/InlineResponse2001{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Log external agent execution details
-     * Records various timing and performance metrics for external agent execution
-     * @param {module:model/LogExternalAgentBody} body 
-     * @param {module:api/LogsApi~logExternalAgentCallback} callback The callback function, accepting three arguments: error, data, response
+     * Get the average user ratings for an answer
+     * Get the average user ratings for an answer
+     * @param {module:model/AnswerRatingsBody} body The request object.
+     * @param {module:SeekAnswerRatingsApi~answerRatingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    logExternalAgent(body, callback) {
+    answerRatings(body, callback) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling logExternalAgent");
+        throw new Error("Missing the required parameter 'body' when calling answerRatings");
       }
 
       let pathParams = {
@@ -77,33 +76,35 @@ export default class LogsApi {
       let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20012;
+      let returnType = InlineResponse2001;
 
       return this.apiClient.callApi(
-        '/logExternalAgent', 'POST',
+        '/answerRatings', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
     /**
-     * Callback function to receive the result of the logs operation.
-     * @callback moduleapi/LogsApi~logsCallback
+     * Callback function to receive the result of the rate operation.
+     * @callback moduleSeekAnswerRatingsApi~rateCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/InlineResponse20011>{ data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Instance Logs
-     * Retrieve logs for your instance
-     * @param {Object} opts Optional parameters
-     * @param {module:model/LogsBody} opts.body The request object.
-     * @param {module:api/LogsApi~logsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     * Rate an answer
+     * Allow users to give feedback in on answers generated
+     * @param {module:model/RateBody} body The request object.
+     * @param {module:SeekAnswerRatingsApi~rateCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    logs(opts, callback) {
-      opts = opts || {};
-      let postBody = opts['body'];
+    rate(body, callback) {
+      
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rate");
+      }
 
       let pathParams = {
         
@@ -120,11 +121,11 @@ export default class LogsApi {
 
       let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = [InlineResponse20011];
+      let accepts = [];
+      let returnType = null;
 
       return this.apiClient.callApi(
-        '/logs', 'POST',
+        '/rate', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

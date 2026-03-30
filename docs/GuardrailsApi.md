@@ -17,7 +17,7 @@ Find PII in a user utterance
 
 ### Example
 ```javascript
-import {NeuralSeek} from 'neural_seek';
+import {NeuralSeek} from 'neuralSeek';
 let defaultClient = NeuralSeek.ApiClient.instance;
 
 // Configure API key authorization: apiKey
@@ -67,7 +67,7 @@ Run the Semantic Scoring model on text against an array of passages
 
 ### Example
 ```javascript
-import {NeuralSeek} from 'neural_seek';
+import {NeuralSeek} from 'neuralSeek';
 let defaultClient = NeuralSeek.ApiClient.instance;
 
 // Configure API key authorization: apiKey

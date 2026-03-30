@@ -18,14 +18,14 @@ import TrainBody from '../model/TrainBody';
 
 /**
 * TrainKB service.
-* @module api/TrainKBApi
+* @module TrainKBApi
 * @version 1.0.1
 */
 export default class TrainKBApi {
 
     /**
     * Constructs a new TrainKBApi. 
-    * @alias module:api/TrainKBApi
+    * @alias module:TrainKBApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instanc
@@ -37,7 +37,7 @@ export default class TrainKBApi {
 
     /**
      * Callback function to receive the result of the train operation.
-     * @callback moduleapi/TrainKBApi~trainCallback
+     * @callback moduleTrainKBApi~trainCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -47,7 +47,7 @@ export default class TrainKBApi {
      * Submit KnowledgeBase Training
      * Submit KnowledgeBase Training
      * @param {module:model/TrainBody} body The request object.  Must include the question and a context.
-     * @param {module:api/TrainKBApi~trainCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:TrainKBApi~trainCallback} callback The callback function, accepting three arguments: error, data, response
      */
     train(body, callback) {
       

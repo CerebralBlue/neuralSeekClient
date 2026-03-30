@@ -17,14 +17,14 @@ import ApiClient from "../ApiClient";
 
 /**
 * UserData service.
-* @module api/UserDataApi
+* @module UserDataApi
 * @version 1.0.1
 */
 export default class UserDataApi {
 
     /**
     * Constructs a new UserDataApi. 
-    * @alias module:api/UserDataApi
+    * @alias module:UserDataApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instanc
@@ -36,7 +36,7 @@ export default class UserDataApi {
 
     /**
      * Callback function to receive the result of the deleteUserData operation.
-     * @callback moduleapi/UserDataApi~deleteUserDataCallback
+     * @callback moduleUserDataApi~deleteUserDataCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -47,7 +47,7 @@ export default class UserDataApi {
      * This endpoint deletes all user data
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.intent The intents to delete. If left blank all intents will be deleted.
-     * @param {module:api/UserDataApi~deleteUserDataCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:UserDataApi~deleteUserDataCallback} callback The callback function, accepting three arguments: error, data, response
      */
     deleteUserData(opts, callback) {
       opts = opts || {};

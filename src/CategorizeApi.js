@@ -14,19 +14,19 @@
  *
  */
 import ApiClient from "../ApiClient";
-import ExtractBody from '../model/ExtractBody';
-import InlineResponse2006 from '../model/InlineResponse2006';
+import CategorizeBody from '../model/CategorizeBody';
+import InlineResponse2005 from '../model/InlineResponse2005';
 
 /**
-* ExtractEntities service.
-* @module api/ExtractEntitiesApi
+* Categorize service.
+* @module CategorizeApi
 * @version 1.0.1
 */
-export default class ExtractEntitiesApi {
+export default class CategorizeApi {
 
     /**
-    * Constructs a new ExtractEntitiesApi. 
-    * @alias module:api/ExtractEntitiesApi
+    * Constructs a new CategorizeApi. 
+    * @alias module:CategorizeApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instanc
@@ -37,26 +37,26 @@ export default class ExtractEntitiesApi {
     }
 
     /**
-     * Callback function to receive the result of the extractEntities operation.
-     * @callback moduleapi/ExtractEntitiesApi~extractEntitiesCallback
+     * Callback function to receive the result of the categorize operation.
+     * @callback moduleCategorizeApi~categorizeCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2006{ data The data returned by the service call.
+     * @param {module:model/InlineResponse2005{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Extract entitites from text
-     * Extract entitites from text
-     * @param {module:model/ExtractBody} body The request object.
-     * @param {module:api/ExtractEntitiesApi~extractEntitiesCallback} callback The callback function, accepting three arguments: error, data, response
+     * Categorize text into an Intent &amp; Category
+     * Categorize text into an Intent &amp; Category
+     * @param {module:model/CategorizeBody} body The request object.
+     * @param {module:CategorizeApi~categorizeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    extractEntities(body, callback) {
+    categorize(body, callback) {
       
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling extractEntities");
+        throw new Error("Missing the required parameter 'body' when calling categorize");
       }
 
       let pathParams = {
@@ -75,10 +75,10 @@ export default class ExtractEntitiesApi {
       let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2006;
+      let returnType = InlineResponse2005;
 
       return this.apiClient.callApi(
-        '/extract', 'POST',
+        '/categorize', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

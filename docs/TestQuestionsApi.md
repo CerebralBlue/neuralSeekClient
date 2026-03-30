@@ -17,7 +17,7 @@ Retrieve an results from the test endpoint
 
 ### Example
 ```javascript
-import {NeuralSeek} from 'neural_seek';
+import {NeuralSeek} from 'neuralSeek';
 let defaultClient = NeuralSeek.ApiClient.instance;
 
 // Configure API key authorization: apiKey
@@ -62,7 +62,7 @@ Test questions via batch upload
 
 ### Example
 ```javascript
-import {NeuralSeek} from 'neural_seek';
+import {NeuralSeek} from 'neuralSeek';
 let defaultClient = NeuralSeek.ApiClient.instance;
 
 // Configure API key authorization: apiKey

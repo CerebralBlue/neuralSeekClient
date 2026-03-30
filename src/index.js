@@ -75,21 +75,21 @@ import TrainBody from './model/TrainBody';
 import TranslateBody from './model/TranslateBody';
 import TranslateGlossaryBody from './model/TranslateGlossaryBody';
 import TranslateGlossaryBody1 from './model/TranslateGlossaryBody1';
-import AnalyticsApi from './api/AnalyticsApi';
-import CategorizeApi from './api/CategorizeApi';
-import ExtractEntitiesApi from './api/ExtractEntitiesApi';
-import GuardrailsApi from './api/GuardrailsApi';
-import KeysApi from './api/KeysApi';
-import LogsApi from './api/LogsApi';
-import MAIstroApi from './api/MAIstroApi';
-import MAIstroAgentRatingsApi from './api/MAIstroAgentRatingsApi';
-import SeekApi from './api/SeekApi';
-import SeekAnswerRatingsApi from './api/SeekAnswerRatingsApi';
-import ServiceTestApi from './api/ServiceTestApi';
-import TestQuestionsApi from './api/TestQuestionsApi';
-import TrainKBApi from './api/TrainKBApi';
-import TranslateApi from './api/TranslateApi';
-import UserDataApi from './api/UserDataApi';
+import AnalyticsApi from './AnalyticsApi';
+import CategorizeApi from './CategorizeApi';
+import ExtractEntitiesApi from './ExtractEntitiesApi';
+import GuardrailsApi from './GuardrailsApi';
+import KeysApi from './KeysApi';
+import LogsApi from './LogsApi';
+import MAIstroApi from './MAIstroApi';
+import MAIstroAgentRatingsApi from './MAIstroAgentRatingsApi';
+import SeekApi from './SeekApi';
+import SeekAnswerRatingsApi from './SeekAnswerRatingsApi';
+import ServiceTestApi from './ServiceTestApi';
+import TestQuestionsApi from './TestQuestionsApi';
+import TrainKBApi from './TrainKBApi';
+import TranslateApi from './TranslateApi';
+import UserDataApi from './UserDataApi';
 
 /**
 * NeuralSeek___The_business_LLM_accelerator.<br>
@@ -497,91 +497,91 @@ export {
 
     /**
     * The AnalyticsApi service constructor.
-    * @property {module:api/AnalyticsApi}
+    * @property {module:AnalyticsApi}
     */
     AnalyticsApi,
 
     /**
     * The CategorizeApi service constructor.
-    * @property {module:api/CategorizeApi}
+    * @property {module:CategorizeApi}
     */
     CategorizeApi,
 
     /**
     * The ExtractEntitiesApi service constructor.
-    * @property {module:api/ExtractEntitiesApi}
+    * @property {module:ExtractEntitiesApi}
     */
     ExtractEntitiesApi,
 
     /**
     * The GuardrailsApi service constructor.
-    * @property {module:api/GuardrailsApi}
+    * @property {module:GuardrailsApi}
     */
     GuardrailsApi,
 
     /**
     * The KeysApi service constructor.
-    * @property {module:api/KeysApi}
+    * @property {module:KeysApi}
     */
     KeysApi,
 
     /**
     * The LogsApi service constructor.
-    * @property {module:api/LogsApi}
+    * @property {module:LogsApi}
     */
     LogsApi,
 
     /**
     * The MAIstroApi service constructor.
-    * @property {module:api/MAIstroApi}
+    * @property {module:MAIstroApi}
     */
     MAIstroApi,
 
     /**
     * The MAIstroAgentRatingsApi service constructor.
-    * @property {module:api/MAIstroAgentRatingsApi}
+    * @property {module:MAIstroAgentRatingsApi}
     */
     MAIstroAgentRatingsApi,
 
     /**
     * The SeekApi service constructor.
-    * @property {module:api/SeekApi}
+    * @property {module:SeekApi}
     */
     SeekApi,
 
     /**
     * The SeekAnswerRatingsApi service constructor.
-    * @property {module:api/SeekAnswerRatingsApi}
+    * @property {module:SeekAnswerRatingsApi}
     */
     SeekAnswerRatingsApi,
 
     /**
     * The ServiceTestApi service constructor.
-    * @property {module:api/ServiceTestApi}
+    * @property {module:ServiceTestApi}
     */
     ServiceTestApi,
 
     /**
     * The TestQuestionsApi service constructor.
-    * @property {module:api/TestQuestionsApi}
+    * @property {module:TestQuestionsApi}
     */
     TestQuestionsApi,
 
     /**
     * The TrainKBApi service constructor.
-    * @property {module:api/TrainKBApi}
+    * @property {module:TrainKBApi}
     */
     TrainKBApi,
 
     /**
     * The TranslateApi service constructor.
-    * @property {module:api/TranslateApi}
+    * @property {module:TranslateApi}
     */
     TranslateApi,
 
     /**
     * The UserDataApi service constructor.
-    * @property {module:api/UserDataApi}
+    * @property {module:UserDataApi}
     */
     UserDataApi
 };

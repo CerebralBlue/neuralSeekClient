@@ -14,18 +14,19 @@
  *
  */
 import ApiClient from "../ApiClient";
-import AnalyticsBody from '../model/AnalyticsBody';
+import ExtractBody from '../model/ExtractBody';
+import InlineResponse2006 from '../model/InlineResponse2006';
 
 /**
-* Analytics service.
-* @module api/AnalyticsApi
+* ExtractEntities service.
+* @module ExtractEntitiesApi
 * @version 1.0.1
 */
-export default class AnalyticsApi {
+export default class ExtractEntitiesApi {
 
     /**
-    * Constructs a new AnalyticsApi. 
-    * @alias module:api/AnalyticsApi
+    * Constructs a new ExtractEntitiesApi. 
+    * @alias module:ExtractEntitiesApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instanc
@@ -36,23 +37,27 @@ export default class AnalyticsApi {
     }
 
     /**
-     * Callback function to receive the result of the analytics operation.
-     * @callback moduleapi/AnalyticsApi~analyticsCallback
+     * Callback function to receive the result of the extractEntities operation.
+     * @callback moduleExtractEntitiesApi~extractEntitiesCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/InlineResponse2006{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Instance Analytics
-     * Retrieve an analytics dataset for your instance
-     * @param {Object} opts Optional parameters
-     * @param {module:model/AnalyticsBody} opts.body The request object.  You may optionally limit the result set using \&quot;count\&quot;
-     * @param {module:api/AnalyticsApi~analyticsCallback} callback The callback function, accepting three arguments: error, data, response
+     * Extract entitites from text
+     * Extract entitites from text
+     * @param {module:model/ExtractBody} body The request object.
+     * @param {module:ExtractEntitiesApi~extractEntitiesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    analytics(opts, callback) {
-      opts = opts || {};
-      let postBody = opts['body'];
+    extractEntities(body, callback) {
+      
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling extractEntities");
+      }
 
       let pathParams = {
         
@@ -69,11 +74,11 @@ export default class AnalyticsApi {
 
       let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
-      let accepts = [];
-      let returnType = null;
+      let accepts = ['application/json'];
+      let returnType = InlineResponse2006;
 
       return this.apiClient.callApi(
-        '/analytics', 'POST',
+        '/extract', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
