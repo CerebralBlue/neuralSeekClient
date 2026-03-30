@@ -126,7 +126,7 @@ export default class MAIstroApi {
         
       };
 
-      let authNames = ['apiKey'];
+      let authNames = ['apiKey', 'embedcode'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = InlineResponse2002;
@@ -351,7 +351,7 @@ export default class MAIstroApi {
         
       };
 
-      let authNames = ['apiKey'];
+      let authNames = ['apiKey', 'embedcode'];
       let contentTypes = ['application/json'];
       let accepts = ['text/event-stream'];
       let returnType = InlineResponse2003;

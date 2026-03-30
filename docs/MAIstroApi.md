@@ -84,6 +84,12 @@ apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
 
+// Configure API key authorization: embedcode
+let embedcode = defaultClient.authentications['embedcode'];
+embedcode.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//embedcode.apiKeyPrefix = 'Token';
+
 let apiInstance = new NeuralSeek.MAIstroApi();
 let body = new NeuralSeek.MaistroBody(); // MaistroBody | The request object.
 let opts = { 
@@ -115,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey)
+[apiKey](../README.md#apiKey), [embedcode](../README.md#embedcode)
 
 ### HTTP request headers
 
@@ -334,6 +340,12 @@ apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
 
+// Configure API key authorization: embedcode
+let embedcode = defaultClient.authentications['embedcode'];
+embedcode.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//embedcode.apiKeyPrefix = 'Token';
+
 let apiInstance = new NeuralSeek.MAIstroApi();
 let body = new NeuralSeek.MaistroStreamBody(); // MaistroStreamBody | The request object.
 
@@ -358,7 +370,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey)
+[apiKey](../README.md#apiKey), [embedcode](../README.md#embedcode)
 
 ### HTTP request headers
 

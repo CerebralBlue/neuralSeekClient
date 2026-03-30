@@ -74,7 +74,7 @@ export default class SeekApi {
         
       };
 
-      let authNames = ['apiKey'];
+      let authNames = ['apiKey', 'embedcode'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = SeekResponse;
@@ -121,7 +121,7 @@ export default class SeekApi {
         
       };
 
-      let authNames = ['apiKey'];
+      let authNames = ['apiKey', 'embedcode'];
       let contentTypes = ['application/json'];
       let accepts = ['text/event-stream'];
       let returnType = InlineResponse200;

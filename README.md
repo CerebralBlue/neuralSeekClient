@@ -204,3 +204,9 @@ Class | Method | HTTP request | Description
 - **API key parameter name**: apikey
 - **Location**: HTTP header
 
+### embedcode
+
+- **Type**: API key
+- **API key parameter name**: embedcode
+- **Location**: HTTP header
+

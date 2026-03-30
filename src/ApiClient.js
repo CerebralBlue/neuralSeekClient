@@ -41,7 +41,8 @@ export default class ApiClient {
          * @type {Array.<String>}
          */
         this.authentications = {
-            'apiKey': {type: 'apiKey', 'in': 'header', name: 'apikey'}
+            'apiKey': {type: 'apiKey', 'in': 'header', name: 'apikey'},
+            'embedcode': {type: 'apiKey', 'in': 'header', name: 'embedcode'}
         }
 
         /**
